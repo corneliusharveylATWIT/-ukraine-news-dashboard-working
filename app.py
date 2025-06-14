@@ -135,8 +135,11 @@ def update_output(start_date, end_date):
     return line_fig_ukr, line_fig_rus
 
 # Step 12: Run the app
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 8050))  # 8050 is a safe fallback for local dev
+    app.run_server(host="0.0.0.0", port=port)
+
 
 
 
